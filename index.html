@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Bibelns släktträd</title>
+
+<script type="text/javascript" src="https://Mithro86.github.io/primitives.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+<link href="https://Mithro86.github.io\css\primitives.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<script type='text/javascript'>
+var control;
+document.addEventListener('DOMContentLoaded', function () {
+var options = new primitives.FamConfig();
+
+var items = [
+
+{ id: 1, parents:[], title: "Jehova", label: "Jehova", description:1,},
+{ id: 2, parents:[1], title: "Adam", label: "Adam", description:2,},
+{ id: 3, parents:[2], title: "Set", label: "Set", description:3,},
+{ id: 4, parents:[3], title: "Enos", label: "Enos", description:4,},
+{ id: 5, parents:[4], title: "Kainan", label: "Kainan", description:5,},
+{ id: 6, parents:[5], title: "Mahalaleel", label: "Mahalaleel", description:6,},
+{ id: 7, parents:[6], title: "Jared", label: "Jared", description:7,},
+{ id: 8, parents:[7], title: "Enok", label: "Enok", description:8,},
+{ id: 9, parents:[8], title: "Metusela", label: "Metusela", description:9,},
+{ id: 10, parents:[9], title: "Lemek", label: "Lemek", description:10,},  
+
+{ id: 100, parents:[10], title: "Noa",label: "Noa", description:100,},
+{ id: 101, parents:[100], title: "Jafet", label: "Jafet", description:101,},
+{ id: 102, parents:[100], title: "Sem", label: "Sem", description:102,},
+{ id: 103, parents:[100], title: "Ham", label: "Ham", description:103,},
+{ id: 104, parents:[103], title: "Arpaksad", label: "Arpaksad", description:104,},
+{ id: 105, parents:[104], title: "Shela", label: "Shela", description:105,},
+{ id: 106, parents:[105], title: "Eber", label: "Eber", description:106,},
+{ id: 107, parents:[106], title: "Peleg", label: "Peleg", description:107,},
+{ id: 108, parents:[107], title: "Reu", label: "Reu", description:108,},
+{ id: 109, parents:[108], title: "Serug", label: "Serug", description:109,},
+{ id: 110, parents:[109], title: "Nahor", label: "Nahor", description:110,},
+{ id: 111, parents:[110], title: "Tera", label: "Tera", description:111,},
+{ id: 112, parents:[111], title: "Abraham", label: "Abraham", description:112,},
+{ id: 113, parents:[111], title: "Nahor", label: "Nahor", description:113,},
+{ id: 114, parents:[111], title: "Haran", label: "Haran", description:114,},
+{ id: 115, parents:[114], title: "Lot", label: "Lot", description:115,},
+{ id: 116, parents:[112], title: "Ismael", label: "Ismael", description:116,},
+{ id: 117, parents:[112], title: "Isak", label: "Isak", description:117,},
+{ id: 118, parents:[117], title: "Esau", label: "Esau", description:118,},
+{ id: 119, parents:[117], title: "Jakob", label: "Jakob", description:119,},
+{ id: 120, parents:[119], title: "Ruben", label: "Ruben", description:120,},
+{ id: 121, parents:[119], title: "Simeon", label: "Simeon", description:121,},
+{ id: 122, parents:[119], title: "Levi", label: "Levi", description:122,},
+{ id: 123, parents:[119], title: "Juda", label: "Juda", description:123,},
+{ id: 124, parents:[119], title: "Dan", label: "Dan", description:124,},
+{ id: 125, parents:[119], title: "Naftali", label: "Naftali", description:125,},
+{ id: 126, parents:[119], title: "Aser", label: "Aser", description:126,},
+{ id: 127, parents:[119], title: "Isaskar", label: "Isaskar", description:127,},
+{ id: 128, parents:[119], title: "Josef", label: "Josef", description:128,},
+{ id: 129, parents:[119], title: "Benjamin", label: "Benjamin", description:129,},
+{ id: 130, parents:[123], title: "Peres", label: "Peres", description:130,},
+{ id: 131, parents:[130], title: "Hesron", label: "Hesron", description:131,},
+{ id: 132, parents:[131], title: "Ram", label: "Ram", description:132,},
+{ id: 133, parents:[132], title: "Amminadab", label: "Amminadab", description:133,},
+{ id: 134, parents:[133], title: "Nahson", label: "Nahson", description:134,},
+{ id: 135, parents:[134], title: "Salmon", label: "Salmon", description:135,},
+{ id: 136, parents:[135], title: "Boas", label: "Boas", description:136,},
+{ id: 137, parents:[136], title: "Obed", label: "Obed", description:137,},
+{ id: 138, parents:[137], title: "Isai", label: "Isai", description:138,},
+{ id: 139, parents:[138], title: "David", label: "David", description:139,},
+{ id: 140, parents:[139], title: "Amnon", label: "Amnon", description:140,},
+{ id: 141, parents:[139], title: "Kilab", label: "Kilab", description:141,},
+{ id: 142, parents:[139], title: "Absalom", label: "Absalom", description:142,},
+{ id: 143, parents:[139], title: "Adonia", label: "Adonia", description:143,},
+{ id: 144, parents:[139], title: "Sefatja", label: "Sefatja", description:144,},
+{ id: 145, parents:[139], title: "Jitream", label: "Jitream", description:145,},
+{ id: 146, parents:[139], title: "Jibhar", label: "Jibhar", description:146,},
+{ id: 147, parents:[139], title: "Elisua", label: "Elisua", description:147,},
+{ id: 148, parents:[139], title: "Nogah", label: "Nogah", description:148,},
+{ id: 149, parents:[139], title: "Elifelet", label: "Elifelet", description:149,},
+{ id: 150, parents:[139], title: "Jerimot", label: "Jerimot", description:150,},
+{ id: 151, parents:[139], title: "Simea", label: "Simea", description:151,},
+{ id: 152, parents:[139], title: "Sobab", label: "Sobab", description:152,},
+{ id: 153, parents:[139], title: "Natan", label: "Natan", description:153,},
+{ id: 154, parents:[139], title: "Salomo", label: "Salomo", description:154,},
+{ id: 155, parents:[154], title: "Rehabeam", label: "Rehabeam", description:155,},
+{ id: 156, parents:[155], title: "Abia", label: "Abia", description:156,},
+{ id: 157, parents:[156], title: "Asa", label: "Asa", description:157,},
+{ id: 158, parents:[157], title: "Jehosafat", label: "Jehosafat", description:158,},
+{ id: 159, parents:[158], title: "Jehoram", label: "Jehoram", description:159,},
+{ id: 160, parents:[159], title: "Ussia", label: "Ussia", description:160,},
+{ id: 161, parents:[160], title: "Jotam", label: "Jotam", description:161,},
+{ id: 162, parents:[161], title: "Ahas", label: "Ahas", description:162,},
+{ id: 163, parents:[162], title: "Hiskia", label: "Hiskia", description:163,},
+{ id: 164, parents:[163], title: "Manasse", label: "Manasse", description:164,},
+{ id: 165, parents:[164], title: "Amon", label: "Amon", description:165,},
+{ id: 166, parents:[165], title: "Josia", label: "Josia", description:166,},
+{ id: 167, parents:[166], title: "Jekonja", label: "Jekonja", description:167,},
+{ id: 168, parents:[167], title: "Sealtiel", label: "Sealtiel", description:168,},
+{ id: 169, parents:[168], title: "Serubbabel", label: "Serubbabel", description:169,},
+{ id: 170, parents:[169], title: "Abihud", label: "Abihud", description:170,},
+{ id: 171, parents:[170], title: "Eljakim", label: "Eljakim", description:171,},
+{ id: 172, parents:[171], title: "Asor", label: "Asor", description:172,},
+{ id: 173, parents:[172], title: "Sadok", label: "Sadok", description:173,},
+{ id: 174, parents:[173], title: "Akim", label: "Akim", description:174,},
+{ id: 175, parents:[174], title: "Elihud", label: "Elihud", description:175,},
+{ id: 176, parents:[175], title: "Eleasar", label: "Eleasar", description:176,},
+{ id: 177, parents:[176], title: "Mattan", label: "Mattan", description:177,},
+{ id: 178, parents:[177], title: "Jakob", label: "Jakob", description:178,},
+{ id: 179, parents:[178], title: "Josef", label: "Josef", description:179,},
+
+{ id: 200, parents:[153], title: "Mattata", label: "Mattata", description:200,},
+{ id: 201, parents:[200], title: "Menna", label: "Menna", description:201,},
+{ id: 202, parents:[201], title: "Melea", label: "Melea", description:202,},
+{ id: 203, parents:[202], title: "Eljakim", label: "Eljakim", description:203,},
+{ id: 204, parents:[203], title: "Jonam", label: "Jonam", description:204,},
+{ id: 205, parents:[204], title: "Josef", label: "Josef", description:205,},
+{ id: 206, parents:[205], title: "Judas", label: "Judas", description:206,},
+{ id: 207, parents:[206], title: "Simeon", label: "Simeon", description:207,},
+{ id: 208, parents:[207], title: "Levi", label: "Levi", description:208,},
+{ id: 209, parents:[208], title: "Mattat", label: "Mattat", description:209,},
+{ id: 210, parents:[209], title: "Jorim", label: "Jorim", description:210,},
+{ id: 211, parents:[210], title: "Elieser", label: "Elieser", description:211,},
+{ id: 212, parents:[211], title: "Jesus", label: "Jesus", description:212,},
+{ id: 213, parents:[212], title: "Er", label: "Er", description:213,},
+{ id: 214, parents:[213], title: "Elmadam", label: "Elmadam", description:214,},
+{ id: 215, parents:[214], title: "Kosam", label: "Kosam", description:215,},
+{ id: 216, parents:[215], title: "Addi", label: "Addi", description:216,},
+{ id: 217, parents:[216], title: "Melki", label: "Melki", description:217,},
+{ id: 218, parents:[217], title: "Neri", label: "Neri", description:218,},
+{ id: 219, parents:[218], title: "Sealtiel", label: "Sealtiel", description:219,},
+{ id: 220, parents:[219], title: "Serubbabel", label: "Serubbabel", description:220,},
+{ id: 221, parents:[220], title: "Resa", label: "Resa", description:221,},
+{ id: 222, parents:[221], title: "Johanan", label: "Johanan", description:222,},
+{ id: 223, parents:[222], title: "Joda", label: "Joda", description:223,},
+{ id: 224, parents:[223], title: "Josek", label: "Josek", description:224,},
+{ id: 225, parents:[224], title: "Semein", label: "Semein", description:225,},
+{ id: 226, parents:[225], title: "Mattatias", label: "Mattatias", description:226,},
+{ id: 227, parents:[226], title: "Maat", label: "Maat", description:227,},
+{ id: 228, parents:[227], title: "Naggai", label: "Naggai", description:228,},
+{ id: 229, parents:[228], title: "Esli", label: "Esli", description:229,},
+{ id: 230, parents:[229], title: "Nahum", label: "Nahum", description:230,},
+{ id: 231, parents:[230], title: "Amos", label: "Amos", description:231,},
+{ id: 232, parents:[231], title: "Mattatias", label: "Mattatias", description:232,},
+{ id: 233, parents:[232], title: "Josef", label: "Josef", description:233,},
+{ id: 234, parents:[233], title: "Jannai", label: "Jannai", description:234,},
+{ id: 235, parents:[234], title: "Melki", label: "Melki", description:235,},
+{ id: 236, parents:[235], title: "Levi", label: "Levi", description:236,},
+{ id: 237, parents:[236], title: "Mattat", label: "Mattat", description:237,},
+{ id: 238, parents:[237], title: "Heli", label: "Heli", description:238,},
+{ id: 239, parents:[238], title: "Maria", label: "Maria", description:239,},
+{ id: 777, parents:[179,239], title: "Jesus Kristus", label: "Jesus Kristus", description:777,},
+
+
+];
+
+var annotations = [
+        new primitives.HighlightPathAnnotationConfig({
+          items: [777, 139],
+          color: primitives.Colors.Red,
+          lineWidth: 5,
+          opacity: 0.3,
+          showArrows: false,
+        }),
+		
+		
+      ];
+
+options.elbowType = primitives.ElbowType.None;
+options.pageFitMode = primitives.PageFitMode.PageWidth;
+
+//options.autoSizeMinimum = new primitives.Size(100, 100);
+//options.autoSizeMaximum = new primitives.Size(4000, 4000);
+options.items = items;
+options.cursorItem = 0;
+options.enablePanning = true;
+options.elbowDotSize = 0;
+options.linesWidth = 1;
+options.linesColor = "#b8b6b4";
+options.hasSelectorCheckbox = primitives.Enabled.False;
+options.normalLevelShift = 20;
+options.dotLevelShift = 20;
+options.lineLevelShift = 20;
+options.normalItemsInterval = 10;
+options.dotItemsInterval = 10;
+options.lineItemsInterval = 10;
+//options.arrowsDirection = primitives.GroupByType.Parents;
+options.showExtraArrows = false;
+options.defaultTemplateName = "info";
+options.templates = [getInfoTemplate()];
+options.onItemRender = onTemplateRender;
+options.hideGrandParentsConnectors = true;
+options.annotations = annotations;
+options.buttonsPanelSize = 46;
+options.hasButtons = primitives.Enabled.Auto;
+
+options.onButtonsRender = function (data) {
+				var itemConfig = data.context;
+				var element = data.element;
+				element.innerHTML = "";
+				element.appendChild(primitives.JsonML.toHTML(["div",
+					{
+					class: ".btn-group btn-group-justified"
+					},
+					["button", 
+						{
+							"type": "button",
+							"data-buttonname": "search",
+							"class": "btn btn-default"
+						},
+						["i", { "class": "fa fa-search" }]
+					],
+				]));
+			};
+options.onButtonClick = function (e, /*primitives.EventArgs*/ data) {
+				switch (data.name) {
+					case "search":
+						{
+							window.open("https://wol.jw.org/sv/wol/s/r14/lp-z?q="+ data.context.title );
+						}
+						break;
+				}
+			};
+
+control = primitives.FamDiagram(document.getElementById("basicdiagram"), options);
+});
+
+function onTemplateRender(event, data) {
+switch (data.renderingMode) {
+case primitives.RenderingMode.Create:
+/* Initialize template content here */
+break;
+case primitives.RenderingMode.Update:
+/* Update template content here */
+break;
+}
+
+var itemConfig = data.context;
+
+if (data.templateName == "info") {
+var title = data.element.firstChild;
+title.textContent = itemConfig.title;
+
+}
+}
+
+function getInfoTemplate() {
+var result = new primitives.TemplateConfig();
+result.name = "info";
+
+result.itemSize = new primitives.Size(80, 36);
+result.minimizedItemSize = new primitives.Size(3, 3);
+result.highlightPadding = new primitives.Thickness(4, 4, 4, 4);
+result.cursorPadding = new primitives.Thickness(0,0,3,3);
+
+result.itemTemplate =
+'<div class="bp-item bp-corner-all bt-item-frame" style="width:' + result.itemSize.width + 'px; height: ' + result.itemSize.height + 'px;">'
++ '<div name="title" class="bp-item" style="">'
++ '</div>'
++ '</div>';
+
+return result;
+}
+</script>
+</head>
+
+<body>
+<div id="basicdiagram" style="width: 100%; height: 8000px"></div>
+</body>
+
+</html>
